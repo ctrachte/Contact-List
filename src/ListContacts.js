@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 // stateless functional component
@@ -21,6 +22,12 @@ function ListContacts (props) {
        )}
     </ol>
   )
+}
+
+// allows us to specify specific types passed into component, and if they are required or not
+ListContacts.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired
 }
 
 // THE BELOW EXAMPLE IS THE SAME FUNCTIONALITY but using class syntax
