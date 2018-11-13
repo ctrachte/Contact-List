@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+// stateless functional component
 function ListContacts (props) {
   return (
     <ol className='contact-list'>
@@ -12,8 +14,8 @@ function ListContacts (props) {
             <p>{contact.name}</p>
             <p>{contact.email}</p>
           </div>
-          <button className='contact-remove'>
-            remove
+          <button className='contact-remove' onClick={ () => props.onDeleteContact(contact) }>
+            Remove
           </button>
         </li>
        )}
