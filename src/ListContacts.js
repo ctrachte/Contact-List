@@ -45,6 +45,10 @@ class ListContacts extends React.Component {
      })
   }
 
+  clearQuery = () => {
+    this.setState({query:''})
+  }
+
   render () {
 
     const { contacts, onDeleteContact } = this.props
@@ -71,6 +75,14 @@ class ListContacts extends React.Component {
             onChange={ (event) => this.updateQuery(event.target.value)}
           />
         </div>
+
+        {showingContacts.length !== contacts.length && (
+          <div className='showing-contacts'>
+            <span> Now Showing {showingContacts.length} of {contacts.length} total </span>
+            <button onClick={this.clearQuery}>Show All</button>
+          </div>
+        )}
+
         <ol className='contact-list'>
           {showingContacts.map((contact, index) =>
             <li key={contact.id} className='contact-list-item'>
