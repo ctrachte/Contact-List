@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function ListContacts (props) {
   return (
@@ -23,7 +23,7 @@ function ListContacts (props) {
 
 // THE BELOW EXAMPLE IS THE SAME FUNCTIONALITY but using class syntax
 
-// class ListContacts extends Component {
+// class ListContacts extends React.Component {
 //   render () {
 //     return (
 //       <ol className='contact-list'>
